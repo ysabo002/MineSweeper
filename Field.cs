@@ -38,6 +38,7 @@ namespace MineSweeper
         internal void Initialize(int first_click_x, int first_click_y)
         {
             Started = true;
+            
             HashSet<int> h = new HashSet<int>();
             int num = 0;
             var rand = new Random();

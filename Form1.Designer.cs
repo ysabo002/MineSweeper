@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.easy = new System.Windows.Forms.RadioButton();
             this.medium = new System.Windows.Forms.RadioButton();
             this.expert = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxOpenGam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,7 +42,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.playNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +70,6 @@
             this.easy.Name = "easy";
             this.easy.Size = new System.Drawing.Size(69, 24);
             this.easy.TabIndex = 1;
-            this.easy.TabStop = true;
             this.easy.Text = "Easy";
             this.easy.UseVisualStyleBackColor = true;
             this.easy.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -80,14 +77,16 @@
             // medium
             // 
             this.medium.AutoSize = true;
+            this.medium.Checked = true;
             this.medium.Location = new System.Drawing.Point(270, 148);
             this.medium.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.medium.Name = "medium";
             this.medium.Size = new System.Drawing.Size(90, 24);
             this.medium.TabIndex = 2;
+            this.medium.TabStop = true;
             this.medium.Text = "Medium";
             this.medium.UseVisualStyleBackColor = true;
-            this.medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.medium.CheckedChanged += new System.EventHandler(this.radioButtonMediumChecked);
             // 
             // expert
             // 
@@ -97,17 +96,17 @@
             this.expert.Name = "expert";
             this.expert.Size = new System.Drawing.Size(80, 24);
             this.expert.TabIndex = 3;
-            this.expert.TabStop = true;
             this.expert.Text = "Expert";
             this.expert.UseVisualStyleBackColor = true;
             this.expert.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // textBox1
+            // textBoxOpenGam
             // 
-            this.textBox1.Location = new System.Drawing.Point(485, 485);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(48, 26);
-            this.textBox1.TabIndex = 4;
+            this.textBoxOpenGam.Location = new System.Drawing.Point(485, 485);
+            this.textBoxOpenGam.Name = "textBoxOpenGam";
+            this.textBoxOpenGam.Size = new System.Drawing.Size(48, 26);
+            this.textBoxOpenGam.TabIndex = 4;
+            this.textBoxOpenGam.TextChanged += new System.EventHandler(this.textBoxOpenGames);
             // 
             // label2
             // 
@@ -127,7 +126,6 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(89, 24);
             this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Custom";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioBtnCustomChanged);
@@ -196,10 +194,6 @@
             this.label4.Text = "columns";
             this.label4.Click += new System.EventHandler(this.labelColumn);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timerTick);
-            // 
             // playNewGameToolStripMenuItem
             // 
             this.playNewGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -246,6 +240,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(752, 33);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
             // 
             // MainForm
             // 
@@ -261,7 +256,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxOpenGam);
             this.Controls.Add(this.expert);
             this.Controls.Add(this.medium);
             this.Controls.Add(this.easy);
@@ -284,7 +279,7 @@
         private System.Windows.Forms.RadioButton easy;
         private System.Windows.Forms.RadioButton medium;
         private System.Windows.Forms.RadioButton expert;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxOpenGam;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button2;
@@ -294,13 +289,13 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem playNewGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+      
     }
 }
 

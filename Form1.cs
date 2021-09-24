@@ -17,6 +17,7 @@ namespace MineSweeper
             InitializeComponent();
         }
 
+        private int openGames = 0;
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -27,7 +28,7 @@ namespace MineSweeper
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonMediumChecked(object sender, EventArgs e)
         {
 
         }
@@ -59,7 +60,11 @@ namespace MineSweeper
             else
                 return;
             int size = Math.Min(30, 1000 / Math.Max(row, col));
+            
             f = new Form2(text, row, col, size,mines);
+            openGames++;
+            textBoxOpenGam.Text = openGames.ToString();
+
             f.Show();
 
 
@@ -82,6 +87,7 @@ namespace MineSweeper
 
         private void button2_Click(object sender, EventArgs e)
         {
+            openGames = 0;
 
         }
 
@@ -102,7 +108,7 @@ namespace MineSweeper
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            medium.Checked = true;
         }
 
         private void labelRow(object sender, EventArgs e)
@@ -121,6 +127,23 @@ namespace MineSweeper
         }
 
         private void timerTick(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void textBoxOpenGames(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
