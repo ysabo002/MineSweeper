@@ -21,7 +21,19 @@ namespace MineSweeper
             this.Text = text;
             field = new Field(row, col,mines);
             this.ClientSize = new Size(row * size, col * size);
-            buttons = new Button[row][];
+
+
+
+
+            timer.Interval = 100; // not sure if this length of time will work 
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Enabled = true;
+            timer.Start();
+
+            this.Controls.Add(timerLabel);
+            this.timerLabel.Text = timer.Interval.ToString();       
+
+        buttons = new Button[row][];
             for (int i = 0; i < row; i++)
                 buttons[i] = new Button[col];
             foreach (int i in Enumerable.Range(0,row))
@@ -32,7 +44,7 @@ namespace MineSweeper
                     buttons[i][j].BackColor = Color.White;
                     buttons[i][j].Name = i + "," + j;
                     buttons[i][j].Size = new Size(size, size);
-                    buttons[i][j].Location = new Point(size * i, size * j);
+                    buttons[i][j].Location = new Point(size * i, size * j  + 50);
                     buttons[i][j].UseVisualStyleBackColor = false;
                     buttons[i][j].MouseUp += new MouseEventHandler(Button_Click);
                     this.Controls.Add(buttons[i][j]);
@@ -131,7 +143,17 @@ namespace MineSweeper
         }
         private Button[][] buttons;
         private Field field;
+        private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private int ticker;
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            ticker++;
+            timerLabel.Text = ticker.ToString();
+
+
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
 

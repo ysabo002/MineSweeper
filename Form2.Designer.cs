@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.SuspendLayout();
             // 
             // Form2
@@ -44,7 +45,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label;
+      
     }
 }

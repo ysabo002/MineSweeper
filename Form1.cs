@@ -61,7 +61,7 @@ namespace MineSweeper
                 return;
             int size = Math.Min(30, 1000 / Math.Max(row, col));
             
-            f = new Form2(text, row, col, size,mines);
+            f = new Form2(text, row, col, size ,mines);
             openGames++;
             textBoxOpenGam.Text = openGames.ToString();
 
@@ -109,6 +109,7 @@ namespace MineSweeper
         private void MainForm_Load(object sender, EventArgs e)
         {
             medium.Checked = true;
+           
         }
 
         private void labelRow(object sender, EventArgs e)
@@ -146,6 +147,16 @@ namespace MineSweeper
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
