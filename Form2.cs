@@ -20,20 +20,16 @@ namespace MineSweeper
         public Form2(String text,int row, int col,int size,int mines) : this(){
             this.Text = text;
             field = new Field(row, col,mines);
-            this.ClientSize = new Size(row * size, col * size);
+            this.ClientSize = new Size(row * size, col * size); 
 
 
 
-
-            timer.Interval = 100; // not sure if this length of time will work 
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Enabled = true;
-            timer.Start();
 
             this.Controls.Add(timerLabel);
-            this.timerLabel.Text = timer.Interval.ToString();       
+            this.timerLabel.Text = startTime.ToString();
 
-        buttons = new Button[row][];
+
+            buttons = new Button[row][];
             for (int i = 0; i < row; i++)
                 buttons[i] = new Button[col];
             foreach (int i in Enumerable.Range(0,row))
@@ -51,6 +47,13 @@ namespace MineSweeper
                 }
         }
         private void Button_Click(object sender, MouseEventArgs e) {
+
+            timer.Interval = 1000; 
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Enabled = true;
+            timer.Start();
+
+
             Button b = (Button)sender;
             int temp = b.Name.IndexOf(",");
             int click_x = Int16.Parse(b.Name.Substring(0, temp));
@@ -146,12 +149,19 @@ namespace MineSweeper
         private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         private int ticker;
+        //private DateTime startTime = DateTime.MinValue;
+        private TimeSpan startTime = TimeSpan.Zero;
+        
+
+        
+
+        //private bool _timerRunning = false;
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+
             ticker++;
             timerLabel.Text = ticker.ToString();
-
 
         }
         private void Form2_Load(object sender, EventArgs e)
