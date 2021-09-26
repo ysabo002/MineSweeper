@@ -26,7 +26,7 @@ namespace MineSweeper
 
 
             this.Controls.Add(timerLabel);
-            this.timerLabel.Text = startTime.ToString();
+            this.timerLabel.Text = printedTime;
 
 
             buttons = new Button[row][];
@@ -148,20 +148,38 @@ namespace MineSweeper
         private Field field;
         private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        
+        private String printedTime = "00:00:00";
         private int ticker;
-        //private DateTime startTime = DateTime.MinValue;
-        private TimeSpan startTime = TimeSpan.Zero;
-        
+        private int seconds = 0;
+        private int minutes = 0;
+        private int hours = 0;
 
-        
-
-        //private bool _timerRunning = false;
+      
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-
             ticker++;
-            timerLabel.Text = ticker.ToString();
+            TimeSpan time = TimeSpan.FromSeconds(ticker);
+            //seconds = ticker;
+            //printedTime = "00:00:" + seconds.ToString();
+            //timerLabel.Text = printedTime;
+            //if (seconds > 59)
+            //   ticker = 0;
+            //   minutes++;
+            //printedTime = "00:" + minutes.ToString() + seconds.ToString();
+            //timerLabel.Text =  printedTime;
+            //if (minutes > 59)
+            //    seconds = 0;
+            //    minutes = 0;
+
+             printedTime = time.ToString(@"hh\:mm\:ss");
+             timerLabel.Text = printedTime;
+
+
+
+
+
 
         }
         private void Form2_Load(object sender, EventArgs e)

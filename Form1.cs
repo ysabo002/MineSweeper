@@ -158,5 +158,10 @@ namespace MineSweeper
         {
             
         }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
