@@ -15,6 +15,7 @@ namespace MineSweeper
         private int Row { get; set; }
         private int Col { get; set; }
         private int Mines { get; set; }
+        
         public Field(int row, int col,int mines) {
             Mine_Map = new bool[row][];
             Discovered = new HashSet<int>();

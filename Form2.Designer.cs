@@ -42,12 +42,14 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(confirmClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.form2Closed);
 
+            
         }
 
 
-         
+
         #endregion
 
-        }
+    }
 }

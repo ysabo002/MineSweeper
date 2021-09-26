@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MineSweeper
-{
+{   
     public partial class MainForm : Form
     {
         public MainForm()
@@ -17,7 +17,7 @@ namespace MineSweeper
             InitializeComponent();
         }
 
-        private int openGames = 0;
+        
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -62,8 +62,13 @@ namespace MineSweeper
             int size = Math.Min(30, 1000 / Math.Max(row, col));
             
             f = new Form2(text, row, col, size ,mines);
-            openGames++;
-            textBoxOpenGam.Text = openGames.ToString();
+
+            f.FormClosed += new FormClosedEventHandler(Form2Closed);
+
+           
+            GameCounter.openGames++;
+            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+
 
             f.Show();
 
@@ -87,7 +92,7 @@ namespace MineSweeper
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openGames = 0;
+            
 
         }
 
@@ -109,6 +114,7 @@ namespace MineSweeper
         private void MainForm_Load(object sender, EventArgs e)
         {
             medium.Checked = true;
+            textBoxOpenGam.Text = GameCounter.openGames.ToString();
            
         }
 
@@ -124,19 +130,7 @@ namespace MineSweeper
 
         private void textBoxColumnTextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void timerTick(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void textBoxOpenGames(object sender, EventArgs e)
-        {
-
+            textBoxOpenGam.Text = GameCounter.openGames.ToString();
         }
 
         private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
@@ -151,7 +145,7 @@ namespace MineSweeper
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            textBoxOpenGam.Text = GameCounter.openGames.ToString();
         }
 
         private void label5_Click_1(object sender, EventArgs e)
@@ -169,6 +163,15 @@ namespace MineSweeper
 
         }
 
-       
+        private void textBoxOpenGam_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        void Form2Closed(object sender, FormClosedEventArgs e)
+        {
+            //GameCounter.openGames--;
+            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+
+        }
     }
 }

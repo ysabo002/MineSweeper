@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+       
 
         /// <summary>
         /// Clean up any resources being used.
@@ -110,7 +111,8 @@
             this.textBoxOpenGam.Name = "textBoxOpenGam";
             this.textBoxOpenGam.Size = new System.Drawing.Size(48, 26);
             this.textBoxOpenGam.TabIndex = 4;
-            this.textBoxOpenGam.TextChanged += new System.EventHandler(this.textBoxOpenGames);
+            this.textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            this.textBoxOpenGam.TextChanged += new System.EventHandler(this.textBoxOpenGam_TextChanged);
             // 
             // label2
             // 
@@ -313,6 +315,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Timer timer1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+
+        
     }
 }
 
