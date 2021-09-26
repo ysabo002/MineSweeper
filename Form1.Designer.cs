@@ -37,7 +37,7 @@
             this.textBoxOpenGam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCloseAllGames = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -111,7 +111,7 @@
             this.textBoxOpenGam.Name = "textBoxOpenGam";
             this.textBoxOpenGam.Size = new System.Drawing.Size(48, 26);
             this.textBoxOpenGam.TabIndex = 4;
-            this.textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            this.textBoxOpenGam.Text = "0";
             this.textBoxOpenGam.TextChanged += new System.EventHandler(this.textBoxOpenGam_TextChanged);
             // 
             // label2
@@ -136,15 +136,15 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioBtnCustomChanged);
             // 
-            // button2
+            // btnCloseAllGames
             // 
-            this.button2.Location = new System.Drawing.Point(451, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 85);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Close all games";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCloseAllGames.Location = new System.Drawing.Point(451, 352);
+            this.btnCloseAllGames.Name = "btnCloseAllGames";
+            this.btnCloseAllGames.Size = new System.Drawing.Size(187, 85);
+            this.btnCloseAllGames.TabIndex = 8;
+            this.btnCloseAllGames.Text = "Close all games";
+            this.btnCloseAllGames.UseVisualStyleBackColor = true;
+            this.btnCloseAllGames.Click += new System.EventHandler(this.btnCloseAllGamesClick);
             // 
             // textBox2
             // 
@@ -270,7 +270,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCloseAllGames);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxOpenGam);
@@ -300,7 +300,7 @@
         private System.Windows.Forms.TextBox textBoxOpenGam;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCloseAllGames;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;

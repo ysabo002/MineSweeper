@@ -19,7 +19,7 @@ namespace MineSweeper
         public Form2()
         {
             InitializeComponent();
-           
+            
         }
 
         
@@ -180,7 +180,7 @@ namespace MineSweeper
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void confirmClosing(object sender, FormClosingEventArgs e)
@@ -192,15 +192,13 @@ namespace MineSweeper
 
         }
 
-        private void form2Closed(object sender, FormClosedEventArgs e)
+       private void closeAll(object sender, FormClosedEventArgs e)
         {
-            GameCounter.openGames--;
-
-           
+            this.Close();
 
         }
 
-        
+
 
     }
 }

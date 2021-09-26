@@ -17,7 +17,6 @@ namespace MineSweeper
             InitializeComponent();
         }
 
-        
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -62,10 +61,12 @@ namespace MineSweeper
             int size = Math.Min(30, 1000 / Math.Max(row, col));
             
             f = new Form2(text, row, col, size ,mines);
+            f.Owner = this;
 
             f.FormClosed += new FormClosedEventHandler(Form2Closed);
 
-           
+            
+
             GameCounter.openGames++;
             textBoxOpenGam.Text = GameCounter.openGames.ToString();
 
@@ -90,9 +91,13 @@ namespace MineSweeper
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCloseAllGamesClick(object sender, EventArgs e)
         {
-            
+            foreach (Form f in this.OwnedForms)
+            {
+                f.Close();
+            }
+
 
         }
 
@@ -169,9 +174,11 @@ namespace MineSweeper
         }
         void Form2Closed(object sender, FormClosedEventArgs e)
         {
-            //GameCounter.openGames--;
+            GameCounter.openGames--;
             textBoxOpenGam.Text = GameCounter.openGames.ToString();
 
         }
+
+       
     }
 }
