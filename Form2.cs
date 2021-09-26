@@ -22,9 +22,6 @@ namespace MineSweeper
             field = new Field(row, col,mines);
             this.ClientSize = new Size(row * size, col * size); 
 
-
-
-
             this.Controls.Add(timerLabel);
             this.timerLabel.Text = printedTime;
 
@@ -151,30 +148,15 @@ namespace MineSweeper
         
         private String printedTime = "00:00:00";
         private int ticker;
-        private int seconds = 0;
-        private int minutes = 0;
-        private int hours = 0;
-
+      
       
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             ticker++;
             TimeSpan time = TimeSpan.FromSeconds(ticker);
-            //seconds = ticker;
-            //printedTime = "00:00:" + seconds.ToString();
-            //timerLabel.Text = printedTime;
-            //if (seconds > 59)
-            //   ticker = 0;
-            //   minutes++;
-            //printedTime = "00:" + minutes.ToString() + seconds.ToString();
-            //timerLabel.Text =  printedTime;
-            //if (minutes > 59)
-            //    seconds = 0;
-            //    minutes = 0;
-
-             printedTime = time.ToString(@"hh\:mm\:ss");
-             timerLabel.Text = printedTime;
+            printedTime = time.ToString(@"hh\:mm\:ss");
+            timerLabel.Text = printedTime;
 
 
 
@@ -184,6 +166,15 @@ namespace MineSweeper
         }
         private void Form2_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void confirmClosing (object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close this form?", "Closing confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
 
         }
     }
