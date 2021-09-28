@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 
 namespace MineSweeper
@@ -35,11 +36,12 @@ namespace MineSweeper
 
             this.timerLabel.Text = printedTime;
 
-            this.Controls.Add(faceButton);
-            faceButton.Image = System.Drawing.Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\slightly_smiling_face_48px.png");
-            
 
-            buttons = new Button[row][];
+            this.pictureBox1.Location = new Point((row * size/2), 5);
+ 
+
+
+             buttons = new Button[row][];
             for (int i = 0; i < row; i++)
                 buttons[i] = new Button[col];
             foreach (int i in Enumerable.Range(0, row))
@@ -164,7 +166,8 @@ namespace MineSweeper
         private Field field;
         private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private Button faceButton = new Button();
+        private Image face = Image.FromFile("C:\\Users\\ysabo\\Desktop\\Icons\\slightly_smiling_face_48px.png");
+        private Button test = new Button();
 
         private String printedTime = "00:00:00";
         private int ticker;
@@ -200,8 +203,15 @@ namespace MineSweeper
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
