@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MineSweeper
 {
     public partial class Form2 : Form
@@ -28,11 +29,15 @@ namespace MineSweeper
         {
             this.Text = text;
             field = new Field(row, col, mines);
-            this.ClientSize = new Size(row * size, col * size);
+            this.ClientSize = new Size(row * size , col * size + 50);
 
             this.Controls.Add(timerLabel);
+
             this.timerLabel.Text = printedTime;
 
+            this.Controls.Add(faceButton);
+            faceButton.Image = System.Drawing.Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\slightly_smiling_face_48px.png");
+            
 
             buttons = new Button[row][];
             for (int i = 0; i < row; i++)
@@ -159,6 +164,7 @@ namespace MineSweeper
         private Field field;
         private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private Button faceButton = new Button();
 
         private String printedTime = "00:00:00";
         private int ticker;
@@ -173,11 +179,7 @@ namespace MineSweeper
             timerLabel.Text = printedTime;
 
 
-
-
-
-
-        }
+         }
         private void Form2_Load(object sender, EventArgs e)
         {
            
