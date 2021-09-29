@@ -53,6 +53,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Deactivate += new System.EventHandler(this.TimerStops);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.confirmClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

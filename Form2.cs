@@ -84,6 +84,7 @@ namespace MineSweeper
                     if (this.field.IsMine(click_x, click_y))
                     {
                         b.BackColor = Color.Red;
+                        this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\dizzy_face_48px.png");
                         MessageBox.Show("Game Over! You clicked on a mine!");
                         break;
                     }
@@ -104,7 +105,7 @@ namespace MineSweeper
                             buttons[i][j].Enabled = false;
                     }
                     if (field.Win())
-                        MessageBox.Show("Congratulations! You discovered all safe squares!");
+                    MessageBox.Show("Congratulations! You discovered all safe squares!");
                     break;
                 case MouseButtons.Right:
                     // Right click
@@ -155,7 +156,9 @@ namespace MineSweeper
                                 buttons[i][j].Enabled = false;
                         }
                         if (field.Win())
-                            MessageBox.Show("Congratulations! You discovered all safe squares!");
+                        this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
+
+                        MessageBox.Show("Congratulations! You discovered all safe squares!");
                     }
                     break;
             }
@@ -166,7 +169,6 @@ namespace MineSweeper
         private Field field;
         private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private Image face = Image.FromFile("C:\\Users\\ysabo\\Desktop\\Icons\\slightly_smiling_face_48px.png");
         private Button test = new Button();
 
         private String printedTime = "00:00:00";
@@ -183,6 +185,15 @@ namespace MineSweeper
 
 
          }
+
+        private void TimerStops(object sender, EventArgs e)
+        {
+            timer.Enabled = false;
+            TimeSpan time = TimeSpan.FromSeconds(ticker);
+            printedTime = time.ToString(@"hh\:mm\:ss");
+            timerLabel.Text = printedTime;
+
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
            

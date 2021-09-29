@@ -40,7 +40,9 @@ namespace MineSweeper
             if (easy.Checked)
             {
                 row = col = 9;
-                mines = 10;
+                 mines = 10;
+                
+
                 text = "Easy";
             }
             else if (medium.Checked)
@@ -64,15 +66,12 @@ namespace MineSweeper
             f.Owner = this;
 
             f.FormClosed += new FormClosedEventHandler(Form2Closed);
-
-            
-
+                   
             GameCounter.openGames++;
             textBoxOpenGam.Text = GameCounter.openGames.ToString();
 
 
             f.Show();
-
 
         }
 
