@@ -69,7 +69,7 @@ namespace MineSweeper
             timer.Enabled = true;
             timer.Start();
 
-
+            GameClicked = true;
             Button b = (Button)sender;
             int temp = b.Name.IndexOf(",");
             int click_x = Int16.Parse(b.Name.Substring(0, temp));
@@ -169,10 +169,9 @@ namespace MineSweeper
         private Field field;
         private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private Button test = new Button();
-
         private String printedTime = "00:00:00";
         private int ticker;
+        private Boolean GameClicked = false;
 
 
 
@@ -201,20 +200,17 @@ namespace MineSweeper
 
         private void confirmClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (GameClicked == true)
             {
-                e.Cancel = true;
+                if (MessageBox.Show("Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
-
         }
 
-       private void closeAll(object sender, FormClosedEventArgs e)
-        {
-            this.Close();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+      
+                private void button1_Click(object sender, EventArgs e)
         {
 
         }
