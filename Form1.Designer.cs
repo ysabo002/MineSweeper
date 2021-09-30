@@ -36,7 +36,7 @@
             this.expert = new System.Windows.Forms.RadioButton();
             this.textBoxOpenGam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioCustom = new System.Windows.Forms.RadioButton();
+            this.custom = new System.Windows.Forms.RadioButton();
             this.btnCloseAllGames = new System.Windows.Forms.Button();
             this.textBoxPlayerName = new System.Windows.Forms.TextBox();
             this.lblPlayerName = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.playNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -79,7 +79,7 @@
             this.easy.TabIndex = 1;
             this.easy.Text = "Easy";
             this.easy.UseVisualStyleBackColor = true;
-            this.easy.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.easy.CheckedChanged += new System.EventHandler(this.radioButtonEasyMediumExpert);
             // 
             // medium
             // 
@@ -91,7 +91,7 @@
             this.medium.TabIndex = 2;
             this.medium.Text = "Medium";
             this.medium.UseVisualStyleBackColor = true;
-            this.medium.CheckedChanged += new System.EventHandler(this.radioButtonMediumChecked);
+            this.medium.CheckedChanged += new System.EventHandler(this.radioButtonEasyMediumExpert);
             // 
             // expert
             // 
@@ -105,7 +105,7 @@
             this.expert.TabStop = true;
             this.expert.Text = "Expert";
             this.expert.UseVisualStyleBackColor = true;
-            this.expert.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.expert.CheckedChanged += new System.EventHandler(this.radioButtonEasyMediumExpert);
             // 
             // textBoxOpenGam
             // 
@@ -126,17 +126,17 @@
             this.label2.Text = "Number of Open Games";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // radioCustom
+            // custom
             // 
-            this.radioCustom.AutoSize = true;
-            this.radioCustom.Location = new System.Drawing.Point(606, 148);
-            this.radioCustom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioCustom.Name = "radioCustom";
-            this.radioCustom.Size = new System.Drawing.Size(89, 24);
-            this.radioCustom.TabIndex = 7;
-            this.radioCustom.Text = "Custom";
-            this.radioCustom.UseVisualStyleBackColor = true;
-            this.radioCustom.CheckedChanged += new System.EventHandler(this.radioCustom_CheckedChanged);
+            this.custom.AutoSize = true;
+            this.custom.Location = new System.Drawing.Point(606, 148);
+            this.custom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.custom.Name = "custom";
+            this.custom.Size = new System.Drawing.Size(89, 24);
+            this.custom.TabIndex = 7;
+            this.custom.Text = "Custom";
+            this.custom.UseVisualStyleBackColor = true;
+            this.custom.CheckedChanged += new System.EventHandler(this.radioCustom_CheckedChanged);
             // 
             // btnCloseAllGames
             // 
@@ -211,7 +211,7 @@
             this.playNewGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.easyToolStripMenuItem,
             this.mediumToolStripMenuItem,
-            this.hardToolStripMenuItem,
+            this.expertToolStripMenuItem,
             this.customToolStripMenuItem});
             this.playNewGameToolStripMenuItem.Name = "playNewGameToolStripMenuItem";
             this.playNewGameToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
@@ -220,26 +220,30 @@
             // easyToolStripMenuItem
             // 
             this.easyToolStripMenuItem.Name = "easyToolStripMenuItem";
-            this.easyToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.easyToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.easyToolStripMenuItem.Text = "Easy";
+            this.easyToolStripMenuItem.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
             // 
             // mediumToolStripMenuItem
             // 
             this.mediumToolStripMenuItem.Name = "mediumToolStripMenuItem";
-            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.mediumToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.mediumToolStripMenuItem.Text = "Medium";
+            this.mediumToolStripMenuItem.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
             // 
-            // hardToolStripMenuItem
+            // expertToolStripMenuItem
             // 
-            this.hardToolStripMenuItem.Name = "hardToolStripMenuItem";
-            this.hardToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
-            this.hardToolStripMenuItem.Text = "Hard";
+            this.expertToolStripMenuItem.Name = "expertToolStripMenuItem";
+            this.expertToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.expertToolStripMenuItem.Text = "Expert";
+            this.expertToolStripMenuItem.Click += new System.EventHandler(this.expertToolStripMenuItem_Click);
             // 
             // customToolStripMenuItem
             // 
             this.customToolStripMenuItem.Name = "customToolStripMenuItem";
-            this.customToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.customToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.customToolStripMenuItem.Text = "Custom";
+            this.customToolStripMenuItem.Click += new System.EventHandler(this.customToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -291,7 +295,7 @@
             this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.textBoxPlayerName);
             this.Controls.Add(this.btnCloseAllGames);
-            this.Controls.Add(this.radioCustom);
+            this.Controls.Add(this.custom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxOpenGam);
             this.Controls.Add(this.expert);
@@ -319,7 +323,7 @@
         private System.Windows.Forms.RadioButton expert;
         private System.Windows.Forms.TextBox textBoxOpenGam;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioCustom;
+        private System.Windows.Forms.RadioButton custom;
         private System.Windows.Forms.Button btnCloseAllGames;
         private System.Windows.Forms.TextBox textBoxPlayerName;
         private System.Windows.Forms.Label lblPlayerName;
@@ -330,7 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem playNewGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expertToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Timer timer1;

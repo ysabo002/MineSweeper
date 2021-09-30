@@ -17,27 +17,11 @@ namespace MineSweeper
             InitializeComponent();
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            lblCustRows.Visible = false;
-            lblCustCol.Visible = false;
-            lblCustMines.Visible = false;
-            txtBoxCustCols.Visible = false;
-            txtBoxCustRows.Visible = false;
-            txtBoxCustMines.Visible = false;
-        }
+     
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            lblCustRows.Visible = false;
-            lblCustCol.Visible = false;
-            lblCustMines.Visible = false;
-            txtBoxCustCols.Visible = false;
-            txtBoxCustRows.Visible = false;
-            txtBoxCustMines.Visible = false;
-        }
+      
 
-        private void radioButtonMediumChecked(object sender, EventArgs e)
+        private void radioButtonEasyMediumExpert(object sender, EventArgs e) // if any radio button is clicked back from custom
         {
             lblCustRows.Visible = false;
             lblCustCol.Visible = false;
@@ -73,7 +57,7 @@ namespace MineSweeper
                 mines = 99;
                 text = "Expert";
             }
-            else if (radioCustom.Checked)
+            else if (custom.Checked)
             {
                 row = Int32.Parse(txtBoxCustRows.Text);
                 col = Int32.Parse(txtBoxCustCols.Text);
@@ -175,11 +159,6 @@ namespace MineSweeper
             textBoxOpenGam.Text = GameCounter.openGames.ToString();
         }
 
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-
        
 
         private void textBoxOpenGam_TextChanged(object sender, EventArgs e)
@@ -211,6 +190,26 @@ namespace MineSweeper
         private void textBoxPlayerName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void easyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            easy.Checked = true;
+        }
+
+        private void mediumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            medium.Checked = true;
+        }
+
+        private void expertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            expert.Checked = true;
+        }
+
+        private void customToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            custom.Checked = true;
         }
     }
 }
