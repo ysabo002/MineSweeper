@@ -103,7 +103,14 @@ namespace MineSweeper
                         if (m > 0)
                         {
                             buttons[i][j].Text = m + "";
-                            buttons[i][j].BackColor = Color.LightBlue;
+                            if (m == 1)
+                                buttons[i][j].BackColor = Color.LightBlue;
+                            if (m == 2)
+                                buttons[i][j].BackColor = Color.LightYellow;
+                            if (m == 3)
+                                buttons[i][j].BackColor = Color.LightPink;
+                            if (m == 4)
+                                buttons[i][j].BackColor = Color.LightSalmon;
                         }
                         else
                             buttons[i][j].Enabled = false;
