@@ -86,9 +86,10 @@ namespace MineSweeper
                     if (this.field.IsMine(click_x, click_y))
                     {
                         b.BackColor = Color.Red;
+                        b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
                         gameFinished = true;
                         this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\dizzy_face_48px.png");
-                        MessageBox.Show("Game Over! You clicked on a mine!");
+                        MessageBox.Show("Game Over! You clicked on a mine!  ");
                         break;
                     }
                     if (this.field.Discovered.Contains(click_x * buttons[0].Length + click_y))
@@ -108,8 +109,13 @@ namespace MineSweeper
                             buttons[i][j].Enabled = false;
                     }
                     if (field.Win())
-                   
-                    MessageBox.Show("Congratulations! You discovered all safe squares!");
+                    {
+
+                        gameFinished = true;
+                        this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
+                        MessageBox.Show("Congratulations! you won in " + printedTime);
+                    }
+
                     break;
                 case MouseButtons.Right:
                     // Right click
@@ -122,7 +128,8 @@ namespace MineSweeper
                     }
                     else
                     {
-                        b.BackColor = Color.Green;
+                        //b.BackColor = Color.Green;
+                        b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_green_flag_16.png");
                         field.Flagged.Add(click_x * buttons[0].Length + click_y);
                     }
                     break;
@@ -143,7 +150,8 @@ namespace MineSweeper
                         {
 
                             gameFinished = true;
-                            b.BackColor = Color.Red;
+                            b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
+                            //b.BackColor = Color.Red;
                             MessageBox.Show("Game Over! You clicked on a mine!");
                             break;
                         }
@@ -165,8 +173,7 @@ namespace MineSweeper
                         {
                             gameFinished = true;
                             this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
-
-                            MessageBox.Show("Congratulations! you won in " + timer.ToString());
+                            MessageBox.Show("Congratulations! you won in " + printedTime);
                         }
 
                     }

@@ -94,5 +94,17 @@
   <ItemGroup>
     <None Include="Resources\Icons\slightly_smiling_face_48px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\naval_mine_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\naval_mine_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\triangular_flag_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icons8_land_mine_16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

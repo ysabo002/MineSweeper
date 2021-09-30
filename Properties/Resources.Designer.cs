@@ -63,9 +63,49 @@ namespace MineSweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_land_mine_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_land_mine_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap naval_mine_100px {
+            get {
+                object obj = ResourceManager.GetObject("naval_mine_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap naval_mine_30px {
+            get {
+                object obj = ResourceManager.GetObject("naval_mine_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap slightly_smiling_face_48px {
             get {
                 object obj = ResourceManager.GetObject("slightly_smiling_face_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap triangular_flag_48px {
+            get {
+                object obj = ResourceManager.GetObject("triangular_flag_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
