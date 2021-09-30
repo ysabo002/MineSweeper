@@ -99,6 +99,11 @@ namespace MineSweeper
 
         private void btnCloseAllGamesClick(object sender, EventArgs e)
         {
+
+            if (this.OwnedForms.Count() < 1)
+
+                MessageBox.Show("There is no open games!");
+
             foreach (Form f in this.OwnedForms)
             {
                 f.Close();
