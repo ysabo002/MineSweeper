@@ -89,7 +89,9 @@ namespace MineSweeper
                         b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
                         gameFinished = true;
                         this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\dizzy_face_48px.png");
-                        MessageBox.Show("Game Over! You clicked on a mine!  ");
+                        MessageBox.Show("Game Over! You clicked on a mine!");
+                        this.Close();
+
                         break;
                     }
                     if (this.field.Discovered.Contains(click_x * buttons[0].Length + click_y))
@@ -110,6 +112,8 @@ namespace MineSweeper
                             if (m == 3)
                                 buttons[i][j].BackColor = Color.LightPink;
                             if (m == 4)
+                                buttons[i][j].BackColor = Color.LightCyan;
+                            if (m == 5)
                                 buttons[i][j].BackColor = Color.LightSalmon;
                         }
                         else
@@ -121,6 +125,7 @@ namespace MineSweeper
                         gameFinished = true;
                         this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
                         MessageBox.Show("Congratulations! you won in " + printedTime);
+                        this.Close();
                     }
 
                     break;
@@ -227,16 +232,18 @@ namespace MineSweeper
 
         }
 
-      
-                private void button1_Click(object sender, EventArgs e)
+        private void showAllMines (int row, int col)
         {
+            Field b = new Field(0,0,0);
+            foreach (int i in Enumerable.Range(0, row))
+                foreach (int j in Enumerable.Range(0, col))
+                    if (this.field.IsMine(i, j)) { }
+                        //b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
+
+
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
         private Button[][] buttons;

@@ -106,5 +106,8 @@
   <ItemGroup>
     <None Include="Resources\Icons\icons8_land_mine_16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icons\icons8_green_flag_16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

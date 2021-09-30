@@ -63,6 +63,16 @@ namespace MineSweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_green_flag_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_green_flag_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_land_mine_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_land_mine_16", resourceCulture);

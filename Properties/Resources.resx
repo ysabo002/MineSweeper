@@ -121,16 +121,19 @@
   <data name="naval_mine_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons\naval_mine_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="triangular_flag_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\triangular_flag_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="slightly_smiling_face_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons\slightly_smiling_face_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_land_mine_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\icons8_land_mine_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="triangular_flag_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\triangular_flag_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="naval_mine_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icons\naval_mine_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_land_mine_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\icons8_land_mine_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_green_flag_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icons\icons8_green_flag_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

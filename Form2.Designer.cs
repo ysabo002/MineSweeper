@@ -48,22 +48,22 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(449, 48);
+            this.textBox1.Location = new System.Drawing.Point(449, 21);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(38, 26);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(573, 48);
+            this.textBox2.Location = new System.Drawing.Point(573, 21);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(43, 26);
             this.textBox2.TabIndex = 5;
             // 
             // btnFlags
             // 
-            this.btnFlags.Image = global::MineSweeper.Properties.Resources.triangular_flag_48px;
-            this.btnFlags.Location = new System.Drawing.Point(520, 39);
+            this.btnFlags.Image = global::MineSweeper.Properties.Resources.icons8_green_flag_16;
+            this.btnFlags.Location = new System.Drawing.Point(520, 12);
             this.btnFlags.Name = "btnFlags";
             this.btnFlags.Size = new System.Drawing.Size(47, 35);
             this.btnFlags.TabIndex = 7;
@@ -72,7 +72,7 @@
             // btnMines
             // 
             this.btnMines.Image = global::MineSweeper.Properties.Resources.icons8_land_mine_16;
-            this.btnMines.Location = new System.Drawing.Point(396, 39);
+            this.btnMines.Location = new System.Drawing.Point(396, 12);
             this.btnMines.Name = "btnMines";
             this.btnMines.Size = new System.Drawing.Size(47, 35);
             this.btnMines.TabIndex = 6;
@@ -88,7 +88,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form2
             // 
