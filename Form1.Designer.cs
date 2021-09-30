@@ -54,6 +54,7 @@
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.lblCustMines = new System.Windows.Forms.Label();
             this.txtBoxCustMines = new System.Windows.Forms.TextBox();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -212,7 +213,8 @@
             this.easyToolStripMenuItem,
             this.mediumToolStripMenuItem,
             this.expertToolStripMenuItem,
-            this.customToolStripMenuItem});
+            this.customToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.playNewGameToolStripMenuItem.Name = "playNewGameToolStripMenuItem";
             this.playNewGameToolStripMenuItem.Size = new System.Drawing.Size(151, 29);
             this.playNewGameToolStripMenuItem.Text = "Play New Game";
@@ -281,6 +283,13 @@
             this.txtBoxCustMines.TabIndex = 19;
             this.txtBoxCustMines.Visible = false;
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Text = "Exit ";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -341,7 +350,7 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.TextBox txtBoxCustMines;
         private System.Windows.Forms.Label lblCustMines;
-       
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
