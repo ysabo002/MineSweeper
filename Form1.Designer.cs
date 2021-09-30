@@ -36,14 +36,14 @@
             this.expert = new System.Windows.Forms.RadioButton();
             this.textBoxOpenGam = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioCustom = new System.Windows.Forms.RadioButton();
             this.btnCloseAllGames = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxPlayerName = new System.Windows.Forms.TextBox();
+            this.lblPlayerName = new System.Windows.Forms.Label();
+            this.txtBoxCustRows = new System.Windows.Forms.TextBox();
+            this.txtBoxCustCols = new System.Windows.Forms.TextBox();
+            this.lblCustRows = new System.Windows.Forms.Label();
+            this.lblCustCol = new System.Windows.Forms.Label();
             this.playNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +52,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.lblCustMines = new System.Windows.Forms.Label();
+            this.txtBoxCustMines = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -82,13 +84,11 @@
             // medium
             // 
             this.medium.AutoSize = true;
-            this.medium.Checked = true;
             this.medium.Location = new System.Drawing.Point(270, 148);
             this.medium.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.medium.Name = "medium";
             this.medium.Size = new System.Drawing.Size(90, 24);
             this.medium.TabIndex = 2;
-            this.medium.TabStop = true;
             this.medium.Text = "Medium";
             this.medium.UseVisualStyleBackColor = true;
             this.medium.CheckedChanged += new System.EventHandler(this.radioButtonMediumChecked);
@@ -96,11 +96,13 @@
             // expert
             // 
             this.expert.AutoSize = true;
+            this.expert.Checked = true;
             this.expert.Location = new System.Drawing.Point(433, 148);
             this.expert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.expert.Name = "expert";
             this.expert.Size = new System.Drawing.Size(80, 24);
             this.expert.TabIndex = 3;
+            this.expert.TabStop = true;
             this.expert.Text = "Expert";
             this.expert.UseVisualStyleBackColor = true;
             this.expert.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
@@ -124,17 +126,17 @@
             this.label2.Text = "Number of Open Games";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // radioButton1
+            // radioCustom
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(606, 148);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(89, 24);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.Text = "Custom";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioBtnCustomChanged);
+            this.radioCustom.AutoSize = true;
+            this.radioCustom.Location = new System.Drawing.Point(606, 148);
+            this.radioCustom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.radioCustom.Name = "radioCustom";
+            this.radioCustom.Size = new System.Drawing.Size(89, 24);
+            this.radioCustom.TabIndex = 7;
+            this.radioCustom.Text = "Custom";
+            this.radioCustom.UseVisualStyleBackColor = true;
+            this.radioCustom.CheckedChanged += new System.EventHandler(this.radioCustom_CheckedChanged);
             // 
             // btnCloseAllGames
             // 
@@ -146,59 +148,63 @@
             this.btnCloseAllGames.UseVisualStyleBackColor = true;
             this.btnCloseAllGames.Click += new System.EventHandler(this.btnCloseAllGamesClick);
             // 
-            // textBox2
+            // textBoxPlayerName
             // 
-            this.textBox2.Location = new System.Drawing.Point(354, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 26);
-            this.textBox2.TabIndex = 9;
+            this.textBoxPlayerName.Location = new System.Drawing.Point(354, 85);
+            this.textBoxPlayerName.Name = "textBoxPlayerName";
+            this.textBoxPlayerName.Size = new System.Drawing.Size(163, 26);
+            this.textBoxPlayerName.TabIndex = 9;
+            this.textBoxPlayerName.TextChanged += new System.EventHandler(this.textBoxPlayerName_TextChanged);
             // 
-            // label1
+            // lblPlayerName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(230, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Player Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.Location = new System.Drawing.Point(230, 91);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(98, 20);
+            this.lblPlayerName.TabIndex = 10;
+            this.lblPlayerName.Text = "Player Name";
+            this.lblPlayerName.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox3
+            // txtBoxCustRows
             // 
-            this.textBox3.Location = new System.Drawing.Point(322, 267);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(61, 26);
-            this.textBox3.TabIndex = 14;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBoxRowTextChanged);
+            this.txtBoxCustRows.Location = new System.Drawing.Point(187, 267);
+            this.txtBoxCustRows.Name = "txtBoxCustRows";
+            this.txtBoxCustRows.Size = new System.Drawing.Size(61, 26);
+            this.txtBoxCustRows.TabIndex = 14;
+            this.txtBoxCustRows.Visible = false;
+            this.txtBoxCustRows.TextChanged += new System.EventHandler(this.textBoxRowTextChanged);
             // 
-            // textBox4
+            // txtBoxCustCols
             // 
-            this.textBox4.Location = new System.Drawing.Point(497, 267);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(61, 26);
-            this.textBox4.TabIndex = 15;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBoxColumnTextChanged);
+            this.txtBoxCustCols.Location = new System.Drawing.Point(354, 264);
+            this.txtBoxCustCols.Name = "txtBoxCustCols";
+            this.txtBoxCustCols.Size = new System.Drawing.Size(61, 26);
+            this.txtBoxCustCols.TabIndex = 15;
+            this.txtBoxCustCols.Visible = false;
+            this.txtBoxCustCols.TextChanged += new System.EventHandler(this.textBoxColumnTextChanged);
             // 
-            // label3
+            // lblCustRows
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(266, 273);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "rows";
-            this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.labelRow);
+            this.lblCustRows.AutoSize = true;
+            this.lblCustRows.Location = new System.Drawing.Point(121, 270);
+            this.lblCustRows.Name = "lblCustRows";
+            this.lblCustRows.Size = new System.Drawing.Size(42, 20);
+            this.lblCustRows.TabIndex = 16;
+            this.lblCustRows.Text = "rows";
+            this.lblCustRows.Visible = false;
+            this.lblCustRows.Click += new System.EventHandler(this.labelRow);
             // 
-            // label4
+            // lblCustCol
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(423, 270);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "columns";
-            this.label4.Click += new System.EventHandler(this.labelColumn);
+            this.lblCustCol.AutoSize = true;
+            this.lblCustCol.Location = new System.Drawing.Point(266, 273);
+            this.lblCustCol.Name = "lblCustCol";
+            this.lblCustCol.Size = new System.Drawing.Size(68, 20);
+            this.lblCustCol.TabIndex = 17;
+            this.lblCustCol.Text = "columns";
+            this.lblCustCol.Visible = false;
+            this.lblCustCol.Click += new System.EventHandler(this.labelColumn);
             // 
             // playNewGameToolStripMenuItem
             // 
@@ -248,30 +254,44 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
-            // 
             // fileSystemWatcher1
             // 
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
-            this.fileSystemWatcher1.Changed += new System.IO.FileSystemEventHandler(this.fileSystemWatcher1_Changed);
+            // 
+            // lblCustMines
+            // 
+            this.lblCustMines.AutoSize = true;
+            this.lblCustMines.Location = new System.Drawing.Point(447, 270);
+            this.lblCustMines.Name = "lblCustMines";
+            this.lblCustMines.Size = new System.Drawing.Size(51, 20);
+            this.lblCustMines.TabIndex = 18;
+            this.lblCustMines.Text = "mines";
+            this.lblCustMines.Visible = false;
+            // 
+            // txtBoxCustMines
+            // 
+            this.txtBoxCustMines.Location = new System.Drawing.Point(519, 264);
+            this.txtBoxCustMines.Name = "txtBoxCustMines";
+            this.txtBoxCustMines.Size = new System.Drawing.Size(100, 26);
+            this.txtBoxCustMines.TabIndex = 19;
+            this.txtBoxCustMines.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 568);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtBoxCustMines);
+            this.Controls.Add(this.lblCustMines);
+            this.Controls.Add(this.lblCustCol);
+            this.Controls.Add(this.lblCustRows);
+            this.Controls.Add(this.txtBoxCustCols);
+            this.Controls.Add(this.txtBoxCustRows);
+            this.Controls.Add(this.lblPlayerName);
+            this.Controls.Add(this.textBoxPlayerName);
             this.Controls.Add(this.btnCloseAllGames);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioCustom);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxOpenGam);
             this.Controls.Add(this.expert);
@@ -299,14 +319,14 @@
         private System.Windows.Forms.RadioButton expert;
         private System.Windows.Forms.TextBox textBoxOpenGam;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioCustom;
         private System.Windows.Forms.Button btnCloseAllGames;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxPlayerName;
+        private System.Windows.Forms.Label lblPlayerName;
+        private System.Windows.Forms.TextBox txtBoxCustRows;
+        private System.Windows.Forms.TextBox txtBoxCustCols;
+        private System.Windows.Forms.Label lblCustRows;
+        private System.Windows.Forms.Label lblCustCol;
         private System.Windows.Forms.ToolStripMenuItem playNewGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem;
@@ -315,8 +335,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Timer timer1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-
-        
+        private System.Windows.Forms.TextBox txtBoxCustMines;
+        private System.Windows.Forms.Label lblCustMines;
+       
     }
 }
 

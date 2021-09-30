@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
+
 
 
 namespace MineSweeper
@@ -202,7 +202,7 @@ namespace MineSweeper
         {
             if (GameClicked == true)
             {
-                if (MessageBox.Show("Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (MessageBox.Show(textBoxPlayerName.Text + "Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     e.Cancel = true;
                 }

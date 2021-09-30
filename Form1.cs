@@ -19,17 +19,32 @@ namespace MineSweeper
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-
+            lblCustRows.Visible = false;
+            lblCustCol.Visible = false;
+            lblCustMines.Visible = false;
+            txtBoxCustCols.Visible = false;
+            txtBoxCustRows.Visible = false;
+            txtBoxCustMines.Visible = false;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            lblCustRows.Visible = false;
+            lblCustCol.Visible = false;
+            lblCustMines.Visible = false;
+            txtBoxCustCols.Visible = false;
+            txtBoxCustRows.Visible = false;
+            txtBoxCustMines.Visible = false;
         }
 
         private void radioButtonMediumChecked(object sender, EventArgs e)
         {
-
+            lblCustRows.Visible = false;
+            lblCustCol.Visible = false;
+            lblCustMines.Visible = false;
+            txtBoxCustCols.Visible = false;
+            txtBoxCustRows.Visible = false;
+            txtBoxCustMines.Visible = false;
         }
 
         private void Play(object sender, EventArgs e)
@@ -40,8 +55,8 @@ namespace MineSweeper
             if (easy.Checked)
             {
                 row = col = 9;
-                 mines = 10;
-                
+                mines = 10;
+
 
                 text = "Easy";
             }
@@ -57,6 +72,14 @@ namespace MineSweeper
                 col = 16;
                 mines = 99;
                 text = "Expert";
+            }
+            else if (radioCustom.Checked)
+            {
+                row = Int32.Parse(txtBoxCustRows.Text);
+                col = Int32.Parse(txtBoxCustCols.Text);
+                mines = Int32.Parse(txtBoxCustMines.Text);
+                text = "Custom";
+
             }
             else
                 return;
@@ -87,7 +110,7 @@ namespace MineSweeper
 
         private void radioBtnCustomChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnCloseAllGamesClick(object sender, EventArgs e)
@@ -157,15 +180,7 @@ namespace MineSweeper
             
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fileSystemWatcher1_Changed(object sender, System.IO.FileSystemEventArgs e)
-        {
-
-        }
+       
 
         private void textBoxOpenGam_TextChanged(object sender, EventArgs e)
         {
@@ -179,5 +194,23 @@ namespace MineSweeper
         }
 
        
+
+        private void radioCustom_CheckedChanged(object sender, EventArgs e)
+        {
+         
+                lblCustRows.Visible = true;
+                lblCustCol.Visible = true;
+                lblCustMines.Visible = true;
+                txtBoxCustCols.Visible = true;
+                txtBoxCustRows.Visible = true;
+                txtBoxCustMines.Visible = true;
+            
+        }
+
+       
+        private void textBoxPlayerName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
