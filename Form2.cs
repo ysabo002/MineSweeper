@@ -86,6 +86,7 @@ namespace MineSweeper
                     if (this.field.IsMine(click_x, click_y))
                     {
                         b.BackColor = Color.Red;
+                        gameFinished = true;
                         this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\dizzy_face_48px.png");
                         MessageBox.Show("Game Over! You clicked on a mine!");
                         break;
@@ -107,6 +108,7 @@ namespace MineSweeper
                             buttons[i][j].Enabled = false;
                     }
                     if (field.Win())
+                   
                     MessageBox.Show("Congratulations! You discovered all safe squares!");
                     break;
                 case MouseButtons.Right:
@@ -139,6 +141,8 @@ namespace MineSweeper
                             continue;
                         if (this.field.IsMine(k / buttons[0].Length, k % buttons[0].Length))
                         {
+
+                            gameFinished = true;
                             b.BackColor = Color.Red;
                             MessageBox.Show("Game Over! You clicked on a mine!");
                             break;
@@ -158,26 +162,21 @@ namespace MineSweeper
                                 buttons[i][j].Enabled = false;
                         }
                         if (field.Win())
-                        this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
+                        {
+                            gameFinished = true;
+                            this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
 
-                        MessageBox.Show("Congratulations! You discovered all safe squares!");
+                            MessageBox.Show("Congratulations! you won in " + timer.ToString());
+                        }
+
                     }
                     break;
             }
 
 
         }
-        private Button[][] buttons;
-        private Field field;
-        private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
-        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private String printedTime = "00:00:00";
-        private int ticker;
-        private Boolean GameClicked = false;
-        
-
-
-
+    
+    
         private void Timer_Tick(object sender, EventArgs e)
         {
             ticker++;
@@ -203,13 +202,15 @@ namespace MineSweeper
 
         private void confirmClosing(object sender, FormClosingEventArgs e)
         {
-            if (GameClicked == true)
+         
+            if (GameClicked == true && gameFinished == false)
             {
                 if (MessageBox.Show("Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     e.Cancel = true;
                 }
             }
+
         }
 
       
@@ -222,6 +223,16 @@ namespace MineSweeper
         {
 
         }
+
+
+        private Button[][] buttons;
+        private Field field;
+        private readonly System.Windows.Forms.Label timerLabel = new System.Windows.Forms.Label();
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private String printedTime = "00:00:00";
+        private int ticker;
+        private Boolean GameClicked = false;
+        private Boolean gameFinished = false;
     }
 }
 
