@@ -26,9 +26,9 @@ namespace MineSweeper
 
         
 
-        public Form2(String text, int row, int col, int size, int mines) : this()
+        public Form2(String text, int row, int col, int size, int mines, String name) : this()
         {
-            this.Text = text;
+            this.Text = text + "   -  " + name;
             field = new Field(row, col, mines);
             this.ClientSize = new Size(row * size , col * size + 50);
 
@@ -38,6 +38,8 @@ namespace MineSweeper
 
 
             this.pictureBox1.Location = new Point((row * size/2), 5);
+
+            
  
 
 
@@ -172,6 +174,7 @@ namespace MineSweeper
         private String printedTime = "00:00:00";
         private int ticker;
         private Boolean GameClicked = false;
+        
 
 
 
@@ -202,7 +205,7 @@ namespace MineSweeper
         {
             if (GameClicked == true)
             {
-                if (MessageBox.Show(textBoxPlayerName.Text + "Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (MessageBox.Show("Are you sure you want to close this form?", "Closing confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     e.Cancel = true;
                 }

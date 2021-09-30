@@ -85,7 +85,7 @@ namespace MineSweeper
                 return;
             int size = Math.Min(30, 1000 / Math.Max(row, col));
             
-            f = new Form2(text, row, col, size ,mines);
+            f = new Form2(text, row, col, size ,mines, textBoxPlayerName.Text);
             f.Owner = this;
 
             f.FormClosed += new FormClosedEventHandler(Form2Closed);
