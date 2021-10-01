@@ -63,7 +63,7 @@ namespace MineSweeper
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.numRows = new System.Windows.Forms.NumericUpDown();
             this.numCols = new System.Windows.Forms.NumericUpDown();
             this.numMines = new System.Windows.Forms.NumericUpDown();
@@ -76,15 +76,15 @@ namespace MineSweeper
             ((System.ComponentModel.ISupportInitialize)(this.numMines)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnOK
             // 
-            this.button1.Location = new System.Drawing.Point(192, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 65);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ConfirmClick);
+            this.btnOK.Location = new System.Drawing.Point(192, 369);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(246, 65);
+            this.btnOK.TabIndex = 0;
+            this.btnOK.Text = "Confirm";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.ConfirmClick);
             // 
             // numRows
             // 
@@ -154,7 +154,7 @@ namespace MineSweeper
             this.Controls.Add(this.numMines);
             this.Controls.Add(this.numCols);
             this.Controls.Add(this.numRows);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOK);
             this.Name = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.numRows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCols)).EndInit();
@@ -166,7 +166,7 @@ namespace MineSweeper
 
         #endregion
 
-        private Button button1;
+        private Button btnOK;
         private NumericUpDown numRows;
         private NumericUpDown numCols;
         private NumericUpDown numMines;

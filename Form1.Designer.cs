@@ -40,10 +40,6 @@
             this.btnCloseAllGames = new System.Windows.Forms.Button();
             this.textBoxPlayerName = new System.Windows.Forms.TextBox();
             this.lblPlayerName = new System.Windows.Forms.Label();
-            this.txtBoxCustRows = new System.Windows.Forms.TextBox();
-            this.txtBoxCustCols = new System.Windows.Forms.TextBox();
-            this.lblCustRows = new System.Windows.Forms.Label();
-            this.lblCustCol = new System.Windows.Forms.Label();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playNewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.easyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,11 +50,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.lblCustMines = new System.Windows.Forms.Label();
-            this.txtBoxCustMines = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -85,7 +77,7 @@
             this.easy.TabIndex = 1;
             this.easy.Text = "Easy";
             this.easy.UseVisualStyleBackColor = false;
-            this.easy.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
+            this.easy.Click += new System.EventHandler(this.easy_CheckedChanged);
             // 
             // medium
             // 
@@ -100,13 +92,12 @@
             this.medium.TabIndex = 2;
             this.medium.Text = "Medium";
             this.medium.UseVisualStyleBackColor = false;
-            this.medium.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
+            this.medium.Click += new System.EventHandler(this.medium_CheckedChanged);
             // 
             // expert
             // 
             this.expert.AutoSize = true;
             this.expert.BackColor = System.Drawing.Color.Transparent;
-            this.expert.Checked = true;
             this.expert.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
             this.expert.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.expert.Location = new System.Drawing.Point(417, 148);
@@ -114,10 +105,9 @@
             this.expert.Name = "expert";
             this.expert.Size = new System.Drawing.Size(116, 36);
             this.expert.TabIndex = 3;
-            this.expert.TabStop = true;
             this.expert.Text = "Expert";
             this.expert.UseVisualStyleBackColor = false;
-            this.expert.Click += new System.EventHandler(this.expertToolStripMenuItem_Click);
+            this.expert.Click += new System.EventHandler(this.expert_CheckedChanged);
             // 
             // textBoxOpenGam
             // 
@@ -155,7 +145,7 @@
             this.custom.TabIndex = 7;
             this.custom.Text = "Custom";
             this.custom.UseVisualStyleBackColor = false;
-            this.custom.Click += new System.EventHandler(this.radioCustom_CheckedChanged);
+            this.custom.Click += new System.EventHandler(this.custom_CheckedChanged);
             // 
             // btnCloseAllGames
             // 
@@ -187,52 +177,6 @@
             this.lblPlayerName.TabIndex = 10;
             this.lblPlayerName.Text = "Player Name";
             this.lblPlayerName.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txtBoxCustRows
-            // 
-            this.txtBoxCustRows.Location = new System.Drawing.Point(176, 263);
-            this.txtBoxCustRows.Name = "txtBoxCustRows";
-            this.txtBoxCustRows.Size = new System.Drawing.Size(61, 26);
-            this.txtBoxCustRows.TabIndex = 14;
-            this.txtBoxCustRows.Visible = false;
-            this.txtBoxCustRows.TextChanged += new System.EventHandler(this.textBoxRowTextChanged);
-            // 
-            // txtBoxCustCols
-            // 
-            this.txtBoxCustCols.Location = new System.Drawing.Point(374, 264);
-            this.txtBoxCustCols.Name = "txtBoxCustCols";
-            this.txtBoxCustCols.Size = new System.Drawing.Size(61, 26);
-            this.txtBoxCustCols.TabIndex = 15;
-            this.txtBoxCustCols.Visible = false;
-            this.txtBoxCustCols.TextChanged += new System.EventHandler(this.textBoxColumnTextChanged);
-            // 
-            // lblCustRows
-            // 
-            this.lblCustRows.AutoSize = true;
-            this.lblCustRows.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustRows.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCustRows.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCustRows.Location = new System.Drawing.Point(93, 257);
-            this.lblCustRows.Name = "lblCustRows";
-            this.lblCustRows.Size = new System.Drawing.Size(72, 32);
-            this.lblCustRows.TabIndex = 16;
-            this.lblCustRows.Text = "rows";
-            this.lblCustRows.Visible = false;
-            this.lblCustRows.Click += new System.EventHandler(this.labelRow);
-            // 
-            // lblCustCol
-            // 
-            this.lblCustCol.AutoSize = true;
-            this.lblCustCol.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustCol.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCustCol.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCustCol.Location = new System.Drawing.Point(257, 258);
-            this.lblCustCol.Name = "lblCustCol";
-            this.lblCustCol.Size = new System.Drawing.Size(114, 32);
-            this.lblCustCol.TabIndex = 17;
-            this.lblCustCol.Text = "columns";
-            this.lblCustCol.Visible = false;
-            this.lblCustCol.Click += new System.EventHandler(this.labelColumn);
             // 
             // menuToolStripMenuItem
             // 
@@ -310,32 +254,6 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked_1);
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
-            // lblCustMines
-            // 
-            this.lblCustMines.AutoSize = true;
-            this.lblCustMines.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustMines.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCustMines.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCustMines.Location = new System.Drawing.Point(447, 258);
-            this.lblCustMines.Name = "lblCustMines";
-            this.lblCustMines.Size = new System.Drawing.Size(85, 32);
-            this.lblCustMines.TabIndex = 18;
-            this.lblCustMines.Text = "mines";
-            this.lblCustMines.Visible = false;
-            // 
-            // txtBoxCustMines
-            // 
-            this.txtBoxCustMines.Location = new System.Drawing.Point(539, 264);
-            this.txtBoxCustMines.Name = "txtBoxCustMines";
-            this.txtBoxCustMines.Size = new System.Drawing.Size(64, 26);
-            this.txtBoxCustMines.TabIndex = 19;
-            this.txtBoxCustMines.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -343,12 +261,6 @@
             this.BackgroundImage = global::MineSweeper.Properties.Resources.brian_patrick_tagalog__8hGFBxWD0A_unsplash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(752, 568);
-            this.Controls.Add(this.txtBoxCustMines);
-            this.Controls.Add(this.lblCustMines);
-            this.Controls.Add(this.lblCustCol);
-            this.Controls.Add(this.lblCustRows);
-            this.Controls.Add(this.txtBoxCustCols);
-            this.Controls.Add(this.txtBoxCustRows);
             this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.textBoxPlayerName);
             this.Controls.Add(this.btnCloseAllGames);
@@ -366,7 +278,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,18 +295,11 @@
         private System.Windows.Forms.Button btnCloseAllGames;
         private System.Windows.Forms.TextBox textBoxPlayerName;
         private System.Windows.Forms.Label lblPlayerName;
-        private System.Windows.Forms.TextBox txtBoxCustRows;
-        private System.Windows.Forms.TextBox txtBoxCustCols;
-        private System.Windows.Forms.Label lblCustRows;
-        private System.Windows.Forms.Label lblCustCol;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playNewGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Timer timer1;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.TextBox txtBoxCustMines;
-        private System.Windows.Forms.Label lblCustMines;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem easyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mediumToolStripMenuItem1;

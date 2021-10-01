@@ -184,19 +184,6 @@ namespace MineSweeper
         {
 
             custom.Checked = true;
-            //customSet = true;
-            
-                //Utilities.ShowDialog("Please enter the number of rows columns and mines for the game", "Input custom values");
-                //lblCustRows.Visible = true;
-                //lblCustCol.Visible = true;
-                //lblCustMines.Visible = true;
-                //txtBoxCustCols.Visible = true;
-                //txtBoxCustRows.Visible = true;
-                //txtBoxCustMines.Visible = true;
-
-            //if (txtBoxCustRows.Value * txtBoxCustCols.value)
-
-
         }
 
        
@@ -220,7 +207,27 @@ namespace MineSweeper
             expert.Checked = true;
         }
 
-       
+        private void custom_CheckedChanged(object sender, EventArgs e)
+        {
+            custom.Checked = true;
+        }
+
+        private void expert_CheckedChanged(object sender, EventArgs e)
+        {
+            expert.Checked = true;
+        }
+
+        private void medium_CheckedChanged(object sender, EventArgs e)
+        {
+            medium.Checked = true;
+        }
+
+        private void easy_CheckedChanged(object sender, EventArgs e)
+        {
+            easy.Checked = true;
+        }
+
+     
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
         {
