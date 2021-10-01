@@ -35,6 +35,7 @@ namespace MineSweeper
             this.Controls.Add(timerLabel);
 
             this.timerLabel.Text = printedTime;
+           
 
 
             this.pictureBox1.Location = new Point((row * size/2), 5);
@@ -70,8 +71,13 @@ namespace MineSweeper
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Enabled = true;
             timer.Start();
+            int Flagged_Count = 0;
+            int minesFlagsCounter= ((MainForm)this.Owner).mines;
 
             GameClicked = true;
+            this.lblMinesFlags.Text = minesFlagsCounter.ToString();
+            this.lblMinesFlags.Refresh();
+
             Button b = (Button)sender;
             int temp = b.Name.IndexOf(",");
             int click_x = Int16.Parse(b.Name.Substring(0, temp));
@@ -135,12 +141,17 @@ namespace MineSweeper
                         break;
                     if (field.Flagged.Contains(click_x * buttons[0].Length + click_y))
                     {
+                        minesFlagsCounter++;
+                        this.lblMinesFlags.Refresh();
                         b.BackColor = Color.White;
                         field.Flagged.Remove(click_x * buttons[0].Length + click_y);
                     }
                     else
                     {
+                        //lblMinesFlags.Text = 
                         //b.BackColor = Color.Green;
+                        minesFlagsCounter--;
+                        this.lblMinesFlags.Refresh();
                         b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_green_flag_16.png");
                         field.Flagged.Add(click_x * buttons[0].Length + click_y);
                     }
@@ -148,10 +159,14 @@ namespace MineSweeper
                 case MouseButtons.Middle:
                     if (!this.field.Discovered.Contains(click_x * buttons[0].Length + click_y))
                         break;
-                    int Flagged_Count = 0;
+                    //int Flagged_Count = 0;
+                  
+
                     foreach (int k in this.field.GetNeighbors(click_x, click_y))
                         if (field.Flagged.Contains(k))
                             Flagged_Count++;
+                            minesFlagsCounter--;
+                            this.lblMinesFlags.Refresh();
                     if (this.field.CountMines(click_x, click_y) != Flagged_Count)
                         break;
                     foreach (int k in this.field.GetNeighbors(click_x, click_y))
@@ -218,6 +233,7 @@ namespace MineSweeper
         {
            
             this.MaximizeBox = false;
+           
         }
 
         private void confirmClosing(object sender, FormClosingEventArgs e)
@@ -255,6 +271,11 @@ namespace MineSweeper
         private int ticker;
         private Boolean GameClicked = false;
         private Boolean gameFinished = false;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

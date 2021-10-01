@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnMines = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblMinesFlags = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(552, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(38, 26);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Visible = false;
             // 
             // btnMines
             // 
             this.btnMines.Image = global::MineSweeper.Properties.Resources.icons8_land_mine_16;
-            this.btnMines.Location = new System.Drawing.Point(483, 33);
+            this.btnMines.Location = new System.Drawing.Point(492, 27);
             this.btnMines.Name = "btnMines";
             this.btnMines.Size = new System.Drawing.Size(47, 35);
             this.btnMines.TabIndex = 6;
             this.btnMines.UseVisualStyleBackColor = true;
-            this.btnMines.Visible = false;
             // 
             // pictureBox1
             // 
@@ -63,14 +54,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblMinesFlags
+            // 
+            this.lblMinesFlags.AutoSize = true;
+            this.lblMinesFlags.Location = new System.Drawing.Point(554, 42);
+            this.lblMinesFlags.Name = "lblMinesFlags";
+            this.lblMinesFlags.Size = new System.Drawing.Size(12, 20);
+            this.lblMinesFlags.TabIndex = 7;
+            this.lblMinesFlags.Text = "aaa";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(645, 502);
+            this.Controls.Add(this.lblMinesFlags);
             this.Controls.Add(this.btnMines);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
@@ -89,7 +89,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnMines;
+        private System.Windows.Forms.Label lblMinesFlags;
     }
 }
