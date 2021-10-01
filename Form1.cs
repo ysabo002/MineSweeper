@@ -53,9 +53,10 @@ namespace MineSweeper
 
                 Form customForm = new Form3();
                 customForm.Owner = this;
+                customSet = false;
                 while (true)
                 {
-                    if (customForm.ShowDialog() == DialogResult.Cancel)
+                    if (customForm.ShowDialog() == DialogResult.Cancel )
                         break;
                     if (customSet)
                     {
@@ -184,6 +185,7 @@ namespace MineSweeper
         {
 
             custom.Checked = true;
+            
         }
 
        

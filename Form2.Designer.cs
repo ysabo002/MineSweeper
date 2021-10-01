@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnFlags = new System.Windows.Forms.Button();
             this.btnMines = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -38,34 +36,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(443, 42);
+            this.textBox1.Location = new System.Drawing.Point(552, 42);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(38, 26);
             this.textBox1.TabIndex = 4;
             this.textBox1.Visible = false;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(567, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(43, 26);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Visible = false;
-            // 
-            // btnFlags
-            // 
-            this.btnFlags.Image = global::MineSweeper.Properties.Resources.icons8_green_flag_16;
-            this.btnFlags.Location = new System.Drawing.Point(498, 33);
-            this.btnFlags.Name = "btnFlags";
-            this.btnFlags.Size = new System.Drawing.Size(47, 35);
-            this.btnFlags.TabIndex = 7;
-            this.btnFlags.UseVisualStyleBackColor = true;
-            this.btnFlags.Visible = false;
-            // 
             // btnMines
             // 
             this.btnMines.Image = global::MineSweeper.Properties.Resources.icons8_land_mine_16;
-            this.btnMines.Location = new System.Drawing.Point(380, 33);
+            this.btnMines.Location = new System.Drawing.Point(483, 33);
             this.btnMines.Name = "btnMines";
             this.btnMines.Size = new System.Drawing.Size(47, 35);
             this.btnMines.TabIndex = 6;
@@ -89,9 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(645, 502);
-            this.Controls.Add(this.btnFlags);
             this.Controls.Add(this.btnMines);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -112,8 +90,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnMines;
-        private System.Windows.Forms.Button btnFlags;
     }
 }

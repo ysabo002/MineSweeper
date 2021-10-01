@@ -71,6 +71,7 @@ namespace MineSweeper
             this.lblCols = new System.Windows.Forms.Label();
             this.lblMines = new System.Windows.Forms.Label();
             this.Heading = new System.Windows.Forms.Label();
+            this.cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numRows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCols)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMines)).BeginInit();
@@ -78,9 +79,9 @@ namespace MineSweeper
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(192, 369);
+            this.btnOK.Location = new System.Drawing.Point(361, 373);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(246, 65);
+            this.btnOK.Size = new System.Drawing.Size(155, 65);
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "Confirm";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -144,9 +145,20 @@ namespace MineSweeper
             this.Heading.Text = "Please enter the number of Rows, Columns and Mines for your custom game";
             this.Heading.Click += new System.EventHandler(this.Heading_Click);
             // 
+            // cancel
+            // 
+            this.cancel.Location = new System.Drawing.Point(124, 373);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(155, 65);
+            this.cancel.TabIndex = 8;
+            this.cancel.Text = "Cancel";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.ClientSize = new System.Drawing.Size(632, 560);
+            this.Controls.Add(this.cancel);
             this.Controls.Add(this.Heading);
             this.Controls.Add(this.lblMines);
             this.Controls.Add(this.lblCols);
@@ -174,5 +186,6 @@ namespace MineSweeper
         private Label lblCols;
         private Label lblMines;
         private Label Heading;
+        private Button cancel;
     }
 }

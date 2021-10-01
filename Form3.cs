@@ -18,10 +18,13 @@ namespace MineSweeper
         private void ConfirmClick(object sender, EventArgs e)
         {
             if (numRows.Value * numCols.Value < 18)
-                MessageBox.Show("Field is too small!");
+                MessageBox.Show("Field is too small, try again");
             else if (numMines.Value > numRows.Value * numCols.Value / 2)
-                MessageBox.Show("Too many mines!");
-            else {
+                MessageBox.Show("Too many mines, try again");
+            else if (numRows.Value * numCols.Value > 5000)
+                MessageBox.Show("Field is too big, try again");
+            else
+            {
                 ((MainForm)this.Owner).customSet = true;
                 ((MainForm)this.Owner).row = (int)numRows.Value;
                 ((MainForm)this.Owner).col = (int)numCols.Value;
@@ -37,6 +40,9 @@ namespace MineSweeper
 
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
