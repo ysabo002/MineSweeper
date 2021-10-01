@@ -75,40 +75,49 @@
             // easy
             // 
             this.easy.AutoSize = true;
-            this.easy.Location = new System.Drawing.Point(125, 148);
+            this.easy.BackColor = System.Drawing.Color.Transparent;
+            this.easy.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.easy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.easy.Location = new System.Drawing.Point(65, 148);
             this.easy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.easy.Name = "easy";
-            this.easy.Size = new System.Drawing.Size(69, 24);
+            this.easy.Size = new System.Drawing.Size(92, 36);
             this.easy.TabIndex = 1;
             this.easy.Text = "Easy";
-            this.easy.UseVisualStyleBackColor = true;
-            this.easy.CheckedChanged += new System.EventHandler(this.radioButtonEasyMediumExpert);
+            this.easy.UseVisualStyleBackColor = false;
+            this.easy.Click += new System.EventHandler(this.easyToolStripMenuItem_Click);
             // 
             // medium
             // 
             this.medium.AutoSize = true;
-            this.medium.Location = new System.Drawing.Point(270, 148);
+            this.medium.BackColor = System.Drawing.Color.Transparent;
+            this.medium.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.medium.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.medium.Location = new System.Drawing.Point(214, 148);
             this.medium.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.medium.Name = "medium";
-            this.medium.Size = new System.Drawing.Size(90, 24);
+            this.medium.Size = new System.Drawing.Size(137, 36);
             this.medium.TabIndex = 2;
             this.medium.Text = "Medium";
-            this.medium.UseVisualStyleBackColor = true;
-            this.medium.CheckedChanged += new System.EventHandler(this.radioButtonEasyMediumExpert);
+            this.medium.UseVisualStyleBackColor = false;
+            this.medium.Click += new System.EventHandler(this.mediumToolStripMenuItem_Click);
             // 
             // expert
             // 
             this.expert.AutoSize = true;
+            this.expert.BackColor = System.Drawing.Color.Transparent;
             this.expert.Checked = true;
-            this.expert.Location = new System.Drawing.Point(433, 148);
+            this.expert.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.expert.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.expert.Location = new System.Drawing.Point(417, 148);
             this.expert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.expert.Name = "expert";
-            this.expert.Size = new System.Drawing.Size(80, 24);
+            this.expert.Size = new System.Drawing.Size(116, 36);
             this.expert.TabIndex = 3;
             this.expert.TabStop = true;
             this.expert.Text = "Expert";
-            this.expert.UseVisualStyleBackColor = true;
-            this.expert.CheckedChanged += new System.EventHandler(this.radioButtonEasyMediumExpert);
+            this.expert.UseVisualStyleBackColor = false;
+            this.expert.Click += new System.EventHandler(this.expertToolStripMenuItem_Click);
             // 
             // textBoxOpenGam
             // 
@@ -122,9 +131,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 491);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(165, 479);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 20);
+            this.label2.Size = new System.Drawing.Size(295, 32);
             this.label2.TabIndex = 6;
             this.label2.Text = "Number of Open Games";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -132,14 +144,18 @@
             // custom
             // 
             this.custom.AutoSize = true;
-            this.custom.Location = new System.Drawing.Point(606, 148);
+            this.custom.BackColor = System.Drawing.Color.Transparent;
+            this.custom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custom.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custom.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.custom.Location = new System.Drawing.Point(562, 148);
             this.custom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.custom.Name = "custom";
-            this.custom.Size = new System.Drawing.Size(89, 24);
+            this.custom.Size = new System.Drawing.Size(128, 36);
             this.custom.TabIndex = 7;
             this.custom.Text = "Custom";
-            this.custom.UseVisualStyleBackColor = true;
-            this.custom.CheckedChanged += new System.EventHandler(this.radioCustom_CheckedChanged);
+            this.custom.UseVisualStyleBackColor = false;
+            this.custom.Click += new System.EventHandler(this.radioCustom_CheckedChanged);
             // 
             // btnCloseAllGames
             // 
@@ -155,23 +171,26 @@
             // 
             this.textBoxPlayerName.Location = new System.Drawing.Point(354, 85);
             this.textBoxPlayerName.Name = "textBoxPlayerName";
-            this.textBoxPlayerName.Size = new System.Drawing.Size(163, 26);
+            this.textBoxPlayerName.Size = new System.Drawing.Size(144, 26);
             this.textBoxPlayerName.TabIndex = 9;
             this.textBoxPlayerName.TextChanged += new System.EventHandler(this.textBoxPlayerName_TextChanged);
             // 
             // lblPlayerName
             // 
             this.lblPlayerName.AutoSize = true;
-            this.lblPlayerName.Location = new System.Drawing.Point(230, 91);
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblPlayerName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblPlayerName.Location = new System.Drawing.Point(182, 82);
             this.lblPlayerName.Name = "lblPlayerName";
-            this.lblPlayerName.Size = new System.Drawing.Size(98, 20);
+            this.lblPlayerName.Size = new System.Drawing.Size(163, 32);
             this.lblPlayerName.TabIndex = 10;
             this.lblPlayerName.Text = "Player Name";
             this.lblPlayerName.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtBoxCustRows
             // 
-            this.txtBoxCustRows.Location = new System.Drawing.Point(187, 267);
+            this.txtBoxCustRows.Location = new System.Drawing.Point(176, 263);
             this.txtBoxCustRows.Name = "txtBoxCustRows";
             this.txtBoxCustRows.Size = new System.Drawing.Size(61, 26);
             this.txtBoxCustRows.TabIndex = 14;
@@ -180,7 +199,7 @@
             // 
             // txtBoxCustCols
             // 
-            this.txtBoxCustCols.Location = new System.Drawing.Point(354, 264);
+            this.txtBoxCustCols.Location = new System.Drawing.Point(374, 264);
             this.txtBoxCustCols.Name = "txtBoxCustCols";
             this.txtBoxCustCols.Size = new System.Drawing.Size(61, 26);
             this.txtBoxCustCols.TabIndex = 15;
@@ -190,9 +209,12 @@
             // lblCustRows
             // 
             this.lblCustRows.AutoSize = true;
-            this.lblCustRows.Location = new System.Drawing.Point(121, 270);
+            this.lblCustRows.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustRows.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCustRows.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblCustRows.Location = new System.Drawing.Point(93, 257);
             this.lblCustRows.Name = "lblCustRows";
-            this.lblCustRows.Size = new System.Drawing.Size(42, 20);
+            this.lblCustRows.Size = new System.Drawing.Size(72, 32);
             this.lblCustRows.TabIndex = 16;
             this.lblCustRows.Text = "rows";
             this.lblCustRows.Visible = false;
@@ -201,9 +223,12 @@
             // lblCustCol
             // 
             this.lblCustCol.AutoSize = true;
-            this.lblCustCol.Location = new System.Drawing.Point(266, 273);
+            this.lblCustCol.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustCol.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCustCol.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCustCol.Location = new System.Drawing.Point(257, 258);
             this.lblCustCol.Name = "lblCustCol";
-            this.lblCustCol.Size = new System.Drawing.Size(68, 20);
+            this.lblCustCol.Size = new System.Drawing.Size(114, 32);
             this.lblCustCol.TabIndex = 17;
             this.lblCustCol.Text = "columns";
             this.lblCustCol.Visible = false;
@@ -227,7 +252,7 @@
             this.expertToolStripMenuItem1,
             this.customToolStripMenuItem1});
             this.playNewGameToolStripMenuItem.Name = "playNewGameToolStripMenuItem";
-            this.playNewGameToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.playNewGameToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
             this.playNewGameToolStripMenuItem.Text = "Play New Game";
             // 
             // easyToolStripMenuItem1
@@ -261,14 +286,14 @@
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
             this.closeAllToolStripMenuItem.Text = "Close all games";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.btnCloseAllGamesClick);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(237, 34);
             this.exitToolStripMenuItem.Text = "Exit ";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -293,18 +318,21 @@
             // lblCustMines
             // 
             this.lblCustMines.AutoSize = true;
-            this.lblCustMines.Location = new System.Drawing.Point(447, 270);
+            this.lblCustMines.BackColor = System.Drawing.Color.Transparent;
+            this.lblCustMines.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCustMines.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblCustMines.Location = new System.Drawing.Point(447, 258);
             this.lblCustMines.Name = "lblCustMines";
-            this.lblCustMines.Size = new System.Drawing.Size(51, 20);
+            this.lblCustMines.Size = new System.Drawing.Size(85, 32);
             this.lblCustMines.TabIndex = 18;
             this.lblCustMines.Text = "mines";
             this.lblCustMines.Visible = false;
             // 
             // txtBoxCustMines
             // 
-            this.txtBoxCustMines.Location = new System.Drawing.Point(519, 264);
+            this.txtBoxCustMines.Location = new System.Drawing.Point(539, 264);
             this.txtBoxCustMines.Name = "txtBoxCustMines";
-            this.txtBoxCustMines.Size = new System.Drawing.Size(100, 26);
+            this.txtBoxCustMines.Size = new System.Drawing.Size(64, 26);
             this.txtBoxCustMines.TabIndex = 19;
             this.txtBoxCustMines.Visible = false;
             // 
@@ -312,6 +340,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MineSweeper.Properties.Resources.brian_patrick_tagalog__8hGFBxWD0A_unsplash;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(752, 568);
             this.Controls.Add(this.txtBoxCustMines);
             this.Controls.Add(this.lblCustMines);

@@ -63,6 +63,26 @@ namespace MineSweeper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brian_patrick_tagalog__8hGFBxWD0A_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("brian-patrick-tagalog-_8hGFBxWD0A-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ferdinand_stohr_NFs6dRTBgaM_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("ferdinand-stohr-NFs6dRTBgaM-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_green_flag_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_green_flag_16", resourceCulture);
@@ -76,6 +96,26 @@ namespace MineSweeper.Properties {
         internal static System.Drawing.Bitmap icons8_land_mine_16 {
             get {
                 object obj = ResourceManager.GetObject("icons8_land_mine_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap michael_dziedzic_79T37JljDZ4_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("michael-dziedzic-79T37JljDZ4-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap michael_dziedzic_bhFkSyBUqAY_unsplash__1_ {
+            get {
+                object obj = ResourceManager.GetObject("michael-dziedzic-bhFkSyBUqAY-unsplash (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +146,16 @@ namespace MineSweeper.Properties {
         internal static System.Drawing.Bitmap slightly_smiling_face_48px {
             get {
                 object obj = ResourceManager.GetObject("slightly_smiling_face_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tina_dawson_Kim9COAIEGc_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("tina-dawson-Kim9COAIEGc-unsplash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

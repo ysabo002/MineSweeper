@@ -30,7 +30,7 @@ namespace MineSweeper
         {
             this.Text = text + "   -  " + name;
             field = new Field(row, col, mines);
-            this.ClientSize = new Size(row * size , col * size + 50);
+            this.ClientSize = new Size(row * size , col * size + 70);
 
             this.Controls.Add(timerLabel);
 
@@ -54,7 +54,7 @@ namespace MineSweeper
                     buttons[i][j].BackColor = Color.White;
                     buttons[i][j].Name = i + "," + j;
                     buttons[i][j].Size = new Size(size, size);
-                    buttons[i][j].Location = new Point(size * i, size * j + 50);
+                    buttons[i][j].Location = new Point(size * i, size * j + 70);
                     buttons[i][j].UseVisualStyleBackColor = false;
                     buttons[i][j].MouseUp += new MouseEventHandler(Button_Click);
                     this.Controls.Add(buttons[i][j]);
@@ -124,7 +124,7 @@ namespace MineSweeper
 
                         gameFinished = true;
                         this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
-                        MessageBox.Show("Congratulations! you won in " + printedTime);
+                        MessageBox.Show("Congratulations! you won in " + printedTime + "seconds");
                         this.Close();
                     }
 
@@ -185,7 +185,7 @@ namespace MineSweeper
                         {
                             gameFinished = true;
                             this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\smiling_face_with_sunglasses_48px.png");
-                            MessageBox.Show("Congratulations! you won in " + printedTime);
+                            MessageBox.Show("Congratulations! you won in " + printedTime + "seconds");
                         }
 
                     }
@@ -217,6 +217,7 @@ namespace MineSweeper
         private void Form2_Load(object sender, EventArgs e)
         {
            
+            this.MaximizeBox = false;
         }
 
         private void confirmClosing(object sender, FormClosingEventArgs e)

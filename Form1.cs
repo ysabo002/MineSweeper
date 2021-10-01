@@ -17,23 +17,14 @@ namespace MineSweeper
             InitializeComponent();
         }
 
-     
+        public int row = 0, col = 0, mines = 0;   //row*col >=18, mines <= row*col/2
+        public Boolean customSet = false;
 
       
 
-        private void radioButtonEasyMediumExpert(object sender, EventArgs e) // if any radio button is clicked back from custom
-        {
-            lblCustRows.Visible = false;
-            lblCustCol.Visible = false;
-            lblCustMines.Visible = false;
-            txtBoxCustCols.Visible = false;
-            txtBoxCustRows.Visible = false;
-            txtBoxCustMines.Visible = false;
-        }
-
         private void Play(object sender, EventArgs e)
         {
-            int row=0, col=0,mines = 0;//row*col >=18, mines <= row*col/2
+            
             String text = "";
             Form2 f = null;
             if (easy.Checked)
@@ -59,10 +50,19 @@ namespace MineSweeper
             }
             else if (custom.Checked)
             {
-                row = Int32.Parse(txtBoxCustRows.Text);
-                col = Int32.Parse(txtBoxCustCols.Text);
-                mines = Int32.Parse(txtBoxCustMines.Text);
-                text = "Custom";
+
+                Form customForm = new Form3();
+                customForm.Owner = this;
+                while (true)
+                {
+                    if (customForm.ShowDialog() == DialogResult.Cancel)
+                        break;
+                    if (customSet)
+                    {
+                        text = "Custom: " + row + " by " + col + " & " + mines + " mines.";
+                        break;
+                    }
+                }
 
             }
             else
@@ -74,8 +74,8 @@ namespace MineSweeper
 
             f.FormClosed += new FormClosedEventHandler(Form2Closed);
                    
-            GameCounter.openGames++;
-            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            Utilities.openGames++;
+            textBoxOpenGam.Text = Utilities.openGames.ToString();
 
 
             f.Show();
@@ -130,7 +130,8 @@ namespace MineSweeper
         private void MainForm_Load(object sender, EventArgs e)
         {
             medium.Checked = true;
-            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            textBoxOpenGam.Text = Utilities.openGames.ToString();
+           
            
         }
 
@@ -146,7 +147,7 @@ namespace MineSweeper
 
         private void textBoxColumnTextChanged(object sender, EventArgs e)
         {
-            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            textBoxOpenGam.Text = Utilities.openGames.ToString();
         }
 
         private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
@@ -161,7 +162,7 @@ namespace MineSweeper
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            textBoxOpenGam.Text = Utilities.openGames.ToString();
         }
 
        
@@ -172,8 +173,8 @@ namespace MineSweeper
         }
         void Form2Closed(object sender, FormClosedEventArgs e)
         {
-            GameCounter.openGames--;
-            textBoxOpenGam.Text = GameCounter.openGames.ToString();
+            Utilities.openGames--;
+            textBoxOpenGam.Text = Utilities.openGames.ToString();
 
         }
 
@@ -181,14 +182,21 @@ namespace MineSweeper
 
         private void radioCustom_CheckedChanged(object sender, EventArgs e)
         {
-         
-                lblCustRows.Visible = true;
-                lblCustCol.Visible = true;
-                lblCustMines.Visible = true;
-                txtBoxCustCols.Visible = true;
-                txtBoxCustRows.Visible = true;
-                txtBoxCustMines.Visible = true;
+
+            custom.Checked = true;
+            //customSet = true;
             
+                //Utilities.ShowDialog("Please enter the number of rows columns and mines for the game", "Input custom values");
+                //lblCustRows.Visible = true;
+                //lblCustCol.Visible = true;
+                //lblCustMines.Visible = true;
+                //txtBoxCustCols.Visible = true;
+                //txtBoxCustRows.Visible = true;
+                //txtBoxCustMines.Visible = true;
+
+            //if (txtBoxCustRows.Value * txtBoxCustCols.value)
+
+
         }
 
        
@@ -211,6 +219,8 @@ namespace MineSweeper
         {
             expert.Checked = true;
         }
+
+       
 
         private void customToolStripMenuItem_Click(object sender, EventArgs e)
         {
