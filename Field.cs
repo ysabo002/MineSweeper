@@ -60,12 +60,23 @@ namespace MineSweeper
         internal int CountMines(int click_x, int click_y)
         {
             int count = 0;
-            for (int i = Math.Max(click_x - 1, 0); i <= Math.Min(click_x + 1, Row-1); i++)
-                for (int j = Math.Max(click_y - 1, 0); j <= Math.Min(click_y + 1, Col-1); j++)
+            for (int i = Math.Max(click_x - 1, 0); i <= Math.Min(click_x + 1, Row - 1); i++)
+                for (int j = Math.Max(click_y - 1, 0); j <= Math.Min(click_y + 1, Col - 1); j++)
                     if (Mine_Map[i][j])
                         count++;
             return count;
         }
+
+        internal int ShowMines(int click_x, int click_y)
+        {
+            int count = 0;
+            for (int i = Math.Max(click_x - 1, 0); i <= Math.Min(click_x + 1, Row - 1); i++)
+                for (int j = Math.Max(click_y - 1, 0); j <= Math.Min(click_y + 1, Col - 1); j++)
+                    if (Mine_Map[i][j])
+                        count++;
+            return count;
+        }
+
         public HashSet<int> GetNeighbors(int x, int y) {
             HashSet<int> result = new HashSet<int>();
             for (int i = Math.Max(x - 1, 0); i <= Math.Min(x + 1, Row-1); i++)

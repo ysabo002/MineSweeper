@@ -28,39 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnMines = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMinesFlags = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnMines
+            // lblMinesFlags
             // 
-            this.btnMines.Image = global::MineSweeper.Properties.Resources.icons8_land_mine_16;
-            this.btnMines.Location = new System.Drawing.Point(492, 27);
-            this.btnMines.Name = "btnMines";
-            this.btnMines.Size = new System.Drawing.Size(47, 35);
-            this.btnMines.TabIndex = 6;
-            this.btnMines.UseVisualStyleBackColor = true;
+            this.lblMinesFlags.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMinesFlags.AutoSize = true;
+            this.lblMinesFlags.Location = new System.Drawing.Point(426, 35);
+            this.lblMinesFlags.Name = "lblMinesFlags";
+            this.lblMinesFlags.Size = new System.Drawing.Size(0, 20);
+            this.lblMinesFlags.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(369, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Mines";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.Image = global::MineSweeper.Properties.Resources.slightly_smiling_face_48px;
-            this.pictureBox1.Location = new System.Drawing.Point(265, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(258, 430);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblMinesFlags
-            // 
-            this.lblMinesFlags.AutoSize = true;
-            this.lblMinesFlags.Location = new System.Drawing.Point(554, 42);
-            this.lblMinesFlags.Name = "lblMinesFlags";
-            this.lblMinesFlags.Size = new System.Drawing.Size(0, 30);
-            this.lblMinesFlags.TabIndex = 7;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form2
             // 
@@ -68,8 +72,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(645, 502);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMinesFlags);
-            this.Controls.Add(this.btnMines);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
@@ -86,9 +90,8 @@
 
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnMines;
         private System.Windows.Forms.Label lblMinesFlags;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

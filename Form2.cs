@@ -30,7 +30,7 @@ namespace MineSweeper
         {
             this.Text = text + "   -  " + name;
             field = new Field(row, col, mines);
-            this.ClientSize = new Size(row * size , col * size + 70);
+            this.ClientSize = new Size(row * size , col * size + 150);
 
             this.Controls.Add(timerLabel);
 
@@ -41,6 +41,8 @@ namespace MineSweeper
             this.pictureBox1.Location = new Point((row * size/2), 5);
 
             minesFlagsCounter = mines;
+            this.col = col;
+            this.row = row;
 
 
             buttons = new Button[row][];
@@ -97,7 +99,9 @@ namespace MineSweeper
                         b.BackColor = Color.Red;
                         b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
                         gameFinished = true;
+
                         this.pictureBox1.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\dizzy_face_48px.png");
+                        //this.showAllMines(row, col);
                         MessageBox.Show("Game Over! You clicked on a mine!");
                         this.Close();
 
@@ -189,7 +193,8 @@ namespace MineSweeper
 
                             gameFinished = true;
                             b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
-                            //b.BackColor = Color.Red;
+                            b.BackColor = Color.Red;
+                            showAllMines(row, col);
                             MessageBox.Show("Game Over! You clicked on a mine!");
                             break;
                         }
@@ -262,15 +267,25 @@ namespace MineSweeper
 
         private void showAllMines (int row, int col)
         {
-            Field b = new Field(0,0,0);
-            foreach (int i in Enumerable.Range(0, row))
-                foreach (int j in Enumerable.Range(0, col))
-                    if (this.field.IsMine(i, j)) { }
-                        //b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_land_mine.ico");
+           //Button[][] buttons = new Button[row][];
+           // for (int a = 0; a < row; a++)
+           //     buttons[a] = new Button[col];
+            Button b = new Button();
+            Button[,] buttons = new Button[row,col];
 
-
+            foreach (Button bu in buttons)
+               // foreach (int j in Enumerable.Range(0, col))
+                 //   if (this.field.IsMine(i, j))
+                       
+                         bu.BackColor = Color.BlueViolet;
 
         }
+
+      
+        
+
+
+
 
 
 
@@ -283,8 +298,30 @@ namespace MineSweeper
         private Boolean GameClicked = false;
         private Boolean gameFinished = false;
         private int minesFlagsCounter = 0;
+        private int col = 0;
+        private int row = 0;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMines_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MinesPict_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
