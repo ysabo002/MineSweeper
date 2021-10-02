@@ -59,9 +59,8 @@
             this.lblMinesFlags.AutoSize = true;
             this.lblMinesFlags.Location = new System.Drawing.Point(554, 42);
             this.lblMinesFlags.Name = "lblMinesFlags";
-            this.lblMinesFlags.Size = new System.Drawing.Size(12, 20);
+            this.lblMinesFlags.Size = new System.Drawing.Size(0, 30);
             this.lblMinesFlags.TabIndex = 7;
-            this.lblMinesFlags.Text = "aaa";
             // 
             // Form2
             // 

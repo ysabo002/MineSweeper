@@ -40,11 +40,10 @@ namespace MineSweeper
 
             this.pictureBox1.Location = new Point((row * size/2), 5);
 
-            
- 
+            minesFlagsCounter = mines;
 
 
-             buttons = new Button[row][];
+            buttons = new Button[row][];
             for (int i = 0; i < row; i++)
                 buttons[i] = new Button[col];
             foreach (int i in Enumerable.Range(0, row))
@@ -59,7 +58,11 @@ namespace MineSweeper
                     buttons[i][j].UseVisualStyleBackColor = false;
                     buttons[i][j].MouseUp += new MouseEventHandler(Button_Click);
                     this.Controls.Add(buttons[i][j]);
+
+                    
                 }
+
+            
         }
 
       
@@ -71,8 +74,8 @@ namespace MineSweeper
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Enabled = true;
             timer.Start();
-            int Flagged_Count = 0;
-            int minesFlagsCounter= ((MainForm)this.Owner).mines;
+           
+            
 
             GameClicked = true;
             this.lblMinesFlags.Text = minesFlagsCounter.ToString();
@@ -141,32 +144,40 @@ namespace MineSweeper
                         break;
                     if (field.Flagged.Contains(click_x * buttons[0].Length + click_y))
                     {
-                        minesFlagsCounter++;
-                        this.lblMinesFlags.Refresh();
+                        
+                        
                         b.BackColor = Color.White;
                         field.Flagged.Remove(click_x * buttons[0].Length + click_y);
+                        minesFlagsCounter++;
+                        this.lblMinesFlags.Text = minesFlagsCounter.ToString();
+                        this.lblMinesFlags.Refresh();
                     }
                     else
                     {
-                        //lblMinesFlags.Text = 
-                        //b.BackColor = Color.Green;
+                        
+                        b.BackColor = Color.Green;
                         minesFlagsCounter--;
-                        this.lblMinesFlags.Refresh();
-                        b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_green_flag_16.png");
+                        this.lblMinesFlags.Text = minesFlagsCounter.ToString();
+                        lblMinesFlags.Refresh();
+                        //b.Image = Image.FromFile("C:\\Users\\ysabo\\Dropbox\\school\\Fall 2021\\COP 4226 Adv Windows Programming\\Assignments\\A2\\MineSweeper\\MineSweeper\\Resources\\Icons\\icons8_green_flag_16.png");
                         field.Flagged.Add(click_x * buttons[0].Length + click_y);
                     }
                     break;
                 case MouseButtons.Middle:
                     if (!this.field.Discovered.Contains(click_x * buttons[0].Length + click_y))
                         break;
-                    //int Flagged_Count = 0;
-                  
+                    int Flagged_Count = 0;
+                    
+
 
                     foreach (int k in this.field.GetNeighbors(click_x, click_y))
                         if (field.Flagged.Contains(k))
+                        {
                             Flagged_Count++;
-                            minesFlagsCounter--;
+                            minesFlagsCounter --;
+                            this.lblMinesFlags.Text = minesFlagsCounter.ToString();
                             this.lblMinesFlags.Refresh();
+                        }
                     if (this.field.CountMines(click_x, click_y) != Flagged_Count)
                         break;
                     foreach (int k in this.field.GetNeighbors(click_x, click_y))
@@ -271,6 +282,7 @@ namespace MineSweeper
         private int ticker;
         private Boolean GameClicked = false;
         private Boolean gameFinished = false;
+        private int minesFlagsCounter = 0;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
